@@ -2,7 +2,7 @@ From centos:7
 
 RUN yum -y update
 RUN yum install -y wget
-RUN yum install java-11-openjdk-devel
+RUN yum install -y java-1.8.0-openjdk
 RUN java -version
 RUN wget https://archive.apache.org/dist/tomcat/tomcat-7/v7.0.99/bin/apache-tomcat-7.0.99.tar.gz
 RUN tar xzf apache-tomcat-7.0.99.tar.gz
