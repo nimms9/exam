@@ -11,3 +11,6 @@ RUN cd /usr/local/tomcat7
 CMD ./bin/startup.sh
 
 COPY target/*.war /usr/local/tomcat/webapps/exam-1.0.0.war
+RUN firewall-cmd --permanent --zone=public --add-port=8082/tcp
+RUN firewall-cmd --zone=public --permanent --add-service=http
+RUN firewall-cmd --reload
