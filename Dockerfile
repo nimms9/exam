@@ -1,4 +1,4 @@
-From centos:7
+FROM centos:7
 
 RUN yum -y update
 RUN yum install -y wget
