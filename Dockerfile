@@ -11,7 +11,7 @@ RUN mv apache-tomcat-7.0.99 /usr/local/tomcat7
 WORKDIR /usr/local/tomcat7
 CMD ./bin/startup.sh
 
-COPY target/*.war /usr/local/tomcat/webapps/exam-1.0.0.war
+COPY target/*.war /usr/local/tomcat7/webapps/exam-1.0.0.war
 #RUN yum install -y firewalld
 #CMD systemctl start firewalld
 #CMD systemctl enable firewalld
