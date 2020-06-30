@@ -11,6 +11,10 @@ RUN cd /usr/local/tomcat7
 CMD ./bin/startup.sh
 
 COPY target/*.war /usr/local/tomcat/webapps/exam-1.0.0.war
+RUN yum install -y firewalld
+RUN systemctl start firewalld
+RUN systemctl enable firewalld
+RUN systemctl status firewalld
 RUN firewall-cmd --permanent --zone=public --add-port=8082/tcp
 RUN firewall-cmd --zone=public --permanent --add-service=http
 RUN firewall-cmd --reload
