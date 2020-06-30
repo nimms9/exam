@@ -15,6 +15,7 @@ RUN yum install -y firewalld
 CMD systemctl start firewalld
 CMD systemctl enable firewalld
 CMD systemctl status firewalld
-RUN firewall-cmd --permanent --zone=public --add-port=8082/tcp
-RUN firewall-cmd --zone=public --permanent --add-service=http
-RUN firewall-cmd --reload
+CMD firewall-cmd --permanent --zone=public --add-port=8080/tcp
+CMD firewall-cmd --permanent --zone=public --add-port=8082/tcp
+CMD firewall-cmd --zone=public --permanent --add-service=http
+CMD firewall-cmd --reload
